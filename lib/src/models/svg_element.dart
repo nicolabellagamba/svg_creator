@@ -2,13 +2,16 @@ import 'dart:ui';
 
 import 'package:svg_creator/src/enums/svg_attribute.dart';
 import 'package:svg_creator/src/extenions/color_extension.dart';
+import 'package:svg_creator/src/models/svg_point.dart';
 
 // mixins
 part '../mixins/animation_element_container_mixin.dart';
+part '../mixins/points_attribute_mixin.dart';
 part '../mixins/shape_element_container_mixin.dart';
 // models
 part './animation_elements.dart';
 part './shape_elements.dart';
+part './text_content_elements.dart';
 
 abstract class SvgElement {
   final Map<SvgAttribute, dynamic> _attributes = {};
@@ -22,7 +25,7 @@ abstract class SvgElement {
   String get name;
 
   void _stringifyAttributes(StringBuffer sBuffer) {
-  for (final MapEntry<SvgAttribute, dynamic> attribute in _attributes.entries.where((MapEntry<SvgAttribute, dynamic> attribute) => null != attribute.value)) {
+    for (final MapEntry<SvgAttribute, dynamic> attribute in _attributes.entries.where((MapEntry<SvgAttribute, dynamic> attribute) => null != attribute.value)) {
       sBuffer.write(' ${attribute.key.name}="${attribute.value}"');
     }
   }
