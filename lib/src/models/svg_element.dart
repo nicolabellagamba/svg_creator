@@ -1,13 +1,15 @@
 import 'dart:ui';
 
 import 'package:svg_creator/src/enums/svg_attribute.dart';
-import 'package:svg_creator/src/extenions/color_extension.dart';
+import 'package:svg_creator/src/extensions/color_extension.dart';
 import 'package:svg_creator/src/models/svg_point.dart';
 
 // mixins
 part '../mixins/animation_element_container_mixin.dart';
 part '../mixins/points_attribute_mixin.dart';
 part '../mixins/shape_element_container_mixin.dart';
+part '../mixins/text_content_child_element_mixin.dart';
+
 // models
 part './animation_elements.dart';
 part './shape_elements.dart';
