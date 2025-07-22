@@ -22,13 +22,9 @@ class Path extends ShapeElement {
   String get name => 'path';
 }
 
-class Polygon extends ShapeElement {
+class Polygon extends ShapeElement with PointsAttributeMixin {
   @override
   String get name => 'polygon';
-
-  set points(String points) {
-    _attributes[SvgAttribute.points] = points;
-  }
 
   set fill(Color color) {
     _attributes[SvgAttribute.fill] = color.toHex();
